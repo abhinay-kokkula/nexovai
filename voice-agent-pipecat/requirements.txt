@@ -1,0 +1,3 @@
+pipecat-ai[google,deepgram,sarvam,silero,webrtc]>=0.0.60
+httpx>=0.27.0
+python-dotenv>=1.0.1

@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@keyframes rowFlash {
+  0% {
+    background-color: rgba(13, 148, 136, 0.16);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes rowCancelFlash {
+  0% {
+    background-color: rgba(220, 38, 38, 0.12);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.animate-row-booked {
+  animation: rowFlash 2.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-row-cancelled {
+  animation: rowCancelFlash 2.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-row-booked,
+  .animate-row-cancelled {
+    animation: none;
+  }
+}
